@@ -4,13 +4,18 @@ Results: Very solid duration for each iteration. Translational motion was harder
 Changes to consider: playing with the LR for more precise convergence (almost slight oscillations right now) and play with hid depth width
 Inspiration and help from @MorvanZhou'''
 
-'''Takeaways:
+'''
+Intuition:
+    - Off policy technique that maps state and action pair to a Q value
+    - Based on parameter, either greedily or probabilistically chooses next action based on that Q value
+    - Training/loss uses the Bellman update equation
+Takeaways:
     - Random individual sampling from experience replay gives much better results than just than sampling in contiguous chunks
     - np.random.choice is very useful
     - Using an epsilon factor helps the agent explore other states in the beginning
     - Using two networks (one for evaluation and one for testing) helps makes things easier. Use load state dict
     - Dropout and model complexity have large effects on convergence. Dropout might not be useful in scenarios like these'''
-    
+
 #imports
 import math
 import torch
@@ -106,7 +111,7 @@ ANGLE = 1 #hoped that the environment would proplerly respond to us taking into 
 POSITION = 1.2 #changed since the pole angle was good but kept moving translationally
 exp = []
 
-for i in range(500):
+for i in range(175):
     state = env.reset()
     frames = 0
     done = False
@@ -125,8 +130,8 @@ for i in range(500):
             dqnet.train_cust()
             if done:
                 print("Program exited after", frames, "frames.")
-                exp += [frames]
         if done:
+            exp += [frames]
             break
         state = newState
 plt.title("Duration over Iterations")
