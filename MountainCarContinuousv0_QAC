@@ -1,0 +1,47 @@
+'''Austin Nguyen ~ July 15
+   MountainCarv0-Continuous ~ Q Actor Critic
+
+   Results:
+        -
+
+   Changes to consider: '''
+
+'''
+Intuition:
+    - We use a different version of the policy gradient. The critic estimates the value function.
+    - The actor updates the policy distribution in direction suggested by critic
+    - We use two different networks. One that outputs a policy distribution and another that outputs Q values of state action pairs
+    - We first update policy parameters by using gradient of log probabilities and Q values
+    - Then we calculate TD errors and use that as a "weight" to update Q function parameters
+    - Basically, after updating Q values in the Q network, we want to increase the probability that we make decisions that have higher Q values
+
+    Temporal Difference (TD):
+        - R(t+1) + (gamma)V(S(t+1)) - V(S(t))
+        - Difference between the actual reward and the expected reward
+        - We are going to use this as our "weight" to update the Q function
+        - This is sometimes used as its own learning method (look of TD learning as opposed to Monte Carlo learning)
+            - Monte Carlo assumes that the Q value is the reward of the current state. TD assumes the Q value is the reward of the next state + gamma * q of next state
+Takeaways:
+    -
+'''
+
+#impot libraries
+
+#define constants
+
+#define neural network
+
+#define actor critic class with Q network and policy network
+#implement experience replay that stores rewards, state, action, probability state/action, next state, and next action
+#no state_dict updates needed
+#choose action method
+#train method
+
+
+#open up the environment...unwrapped
+#initialize recording list for frames
+#define how many iterations
+#keep track of number of frames
+#insert break in case of lots of frames
+#basicallly copy and paste the REINFORCE code honestly
+#rewards might be tricky...try different things 
