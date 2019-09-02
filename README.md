@@ -41,3 +41,8 @@ Solving Gym AI RL problems using variety of RL algorithms.
   
 ## Q Actor Critic ~ MountainCarContinuous
   Using actor critic method with the critic being the output of a state-action Q network
+  
+  - Results: The implementation works, but there are issues with learning rate tuning and epsilon decay. Will tune up soon! However, as stated before, the awkward reward system for this environment makes learning exceptionally sensitivie to LR.
+  - Takeaways:
+        - Unideal reward systems such as this warrant resetting model training within the first few iterations if needed
+        - T3PO would have solved this issue. The concept is difficult to implement, however. Will try that next time around
