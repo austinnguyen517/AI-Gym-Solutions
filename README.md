@@ -23,7 +23,6 @@ Solving Gym AI RL problems using variety of RL algorithms.
   
 ####      Results:
   - Results: Good performance. Within maybe 50-75 episodes, the agent learns relatively well. However, it can be inconsistent 
-    
   - Takeaways:
       - Implementing a reward function that is not PERFECTLY intuitive is okay. Relying on the discount factor is enough
       - Rewarding the network for a good episode works. Training it to replicate that episode is a good method sometimes
@@ -33,7 +32,6 @@ Solving Gym AI RL problems using variety of RL algorithms.
   Using policy gradients on neural networks that output the mean and variance of a gausssian distribution (in continuous action space)
   
 ####       Results:
-
    - Results: UNABLE TO LEARN. The implementation does not work especially because the reward system makes it extraordinarily difficult. The reinforce algorithm does not directly translate to continuous action spaces, and makes it extremely hard to learn. Next time, try an actor critic method and see what happens.
    - Takeaways:
         - REINFORCE relies on policy gradients. This suggests contiguous points of data for training
@@ -42,6 +40,7 @@ Solving Gym AI RL problems using variety of RL algorithms.
 ## Q Actor Critic ~ MountainCarContinuous
   Using actor critic method with the critic being the output of a state-action Q network
   
+####      Results:
   - Results: The implementation works, but there are issues with learning rate tuning and epsilon decay. Will tune up soon! However, as stated before, the awkward reward system for this environment makes learning exceptionally sensitivie to LR.
   - Takeaways:
         - Unideal reward systems such as this warrant resetting model training within the first few iterations if needed
