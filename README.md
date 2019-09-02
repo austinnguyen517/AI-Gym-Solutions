@@ -10,7 +10,7 @@ Solving Gym AI RL problems using variety of RL algorithms.
 ### DQN ~ CartPole
   Using network to find Q values (off policy) associated with state action pairs. Simple implementation using experience replay and random   sampling.
   
-##      Results:
+####      Results:
   - Results: Very solid duration for each iteration. Translational motion was harder to temper than angular motion.
 
   - Takeaways:
