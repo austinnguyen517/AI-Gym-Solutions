@@ -32,5 +32,12 @@ Solving Gym AI RL problems using variety of RL algorithms.
 ### REINFORCE ~ MountainCarContinuous
   Using policy gradients on neural networks that output the mean and variance of a gausssian distribution (in continuous action space)
   
+####       Results:
+
+   - Results: UNABLE TO LEARN. The implementation does not work especially because the reward system makes it extraordinarily difficult. The reinforce algorithm does not directly translate to continuous action spaces, and makes it extremely hard to learn. Next time, try an actor critic method and see what happens.
+   - Takeaways:
+        - REINFORCE relies on policy gradients. This suggests contiguous points of data for training
+        - This makes it not ideal for environments like this where the reward system encourages the agent to do nothing at all
+  
 ### Q Actor Critic ~ MountainCarContinuous
   Using actor critic method with the critic being the output of a state-action Q network
