@@ -20,6 +20,14 @@ Solving Gym AI RL problems using variety of RL algorithms.
   
 ### SARSA ~ MountainCarDiscrete
   Network to find Q values using on policy version of DQN. Uses experience replay, random sampling, and rewards entire successful episodes
+  
+####      Results:
+  - Results: Good performance. Within maybe 50-75 episodes, the agent learns relatively well. However, it can be inconsistent 
+    
+  - Takeaways:
+      - Implementing a reward function that is not PERFECTLY intuitive is okay. Relying on the discount factor is enough
+      - Rewarding the network for a good episode works. Training it to replicate that episode is a good method sometimes
+      - Taking the agent away and starting fresh when the episode is not working out will sometimes help
 
 ### REINFORCE ~ MountainCarContinuous
   Using policy gradients on neural networks that output the mean and variance of a gausssian distribution (in continuous action space)
